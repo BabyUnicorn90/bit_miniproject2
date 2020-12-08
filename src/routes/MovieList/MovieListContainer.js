@@ -16,10 +16,10 @@ export default class extends React.Component {
   async componentDidMount() {
     try {
       const {
-        data: { results: nowPlaying },
+        data: { result: nowPlaying },
       } = await moviesApi.nowPlaying();
-
-      this.setState({ nowPlaying,});
+      console.log(nowPlaying);
+      this.setState({ nowPlaying });
     } catch (error) {
       this.setState({
         error: "영화 정보를 찾을 수 없습니다.",
@@ -31,8 +31,6 @@ export default class extends React.Component {
     }
   }
 
-  console.log(nowPlaying)
-  
   render() {
     const { nowPlaying, error, loading } = this.state;
 

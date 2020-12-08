@@ -25,15 +25,11 @@ const HomePresenter = ({ nowPlaying, error, loading }) => {
             <Section title="현재 상영작">
               {nowPlaying.map((movie) => (
                 <Poster
-                  key={movie.id}
-                  id={movie.id}
-                  title={movie.original_title}
-                  imageUrl={movie.poster_path}
-                  rating={movie.vote_average}
-                  isMovie={true}
-                  year={
-                    movie.release_date && movie.release_date.substring(0, 4)
-                  }
+                  key={movie._id}
+                  id={movie._id}
+                  title={movie.title}
+                  imageUrl={movie.poster}
+                  rating={movie.star}
                 />
               ))}
             </Section>

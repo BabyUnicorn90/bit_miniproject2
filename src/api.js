@@ -5,7 +5,7 @@ const api = axios.create({
 });
 
 export const moviesApi = {
-    movie_list: () => api.get("movie/list"),
+    nowPlaying: () => api.get("movie/list"),
     register: () => api.get("movie/register/<oid>"),
     user_favorite: () => api.get("user/favorite"),
     // movieDetail: (id) =>
