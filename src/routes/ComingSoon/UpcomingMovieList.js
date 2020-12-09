@@ -11,7 +11,7 @@ const Container = styled.div`
   padding: 20px;
 `;
 
-const HomePresenter = ({ nowPlaying, error, loading }) => {
+const UpcomingMovieList = ({ comingsoon: comingsoon_list, error, loading }) => {
   return (
     <>
       <Helmet>
@@ -21,19 +21,15 @@ const HomePresenter = ({ nowPlaying, error, loading }) => {
         <Loader />
       ) : (
         <Container>
-          {nowPlaying && nowPlaying.length > 0 && (
-            <Section title="나의 찜">
-              {nowPlaying.map((movie) => (
+          서비스 준비중
+          {comingsoon_list && comingsoon_list.length > 0 && (
+            <Section title="상영예정작: 보고싶은 영화를 클릭하세요">
+              {comingsoon_list.map((movie) => (
                 <Poster
-                  key={movie.id}
-                  id={movie.id}
-                  title={movie.original_title}
-                  imageUrl={movie.poster_path}
-                  rating={movie.vote_average}
-                  isMovie={true}
-                  year={
-                    movie.release_date && movie.release_date.substring(0, 4)
-                  }
+                  key={movie._id}
+                  id={movie._id}
+                  title={movie.title}
+                  imageUrl={movie.poster}
                 />
               ))}
             </Section>
@@ -45,4 +41,4 @@ const HomePresenter = ({ nowPlaying, error, loading }) => {
   );
 };
 
-export default HomePresenter;
+export default UpcomingMovieList;

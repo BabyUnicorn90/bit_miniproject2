@@ -6,6 +6,8 @@ const Container = styled.div`
   :not(:last-child) {
     margin-bottom: 50px;
   }
+  display: flex;
+  flex-direction: column;
 `;
 
 const Title = styled.span`

@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
-  font-size: 12px;
+  font-size: 13px;
+  text-align: center;
 `;
 
 const Image = styled.div`
   background-image: url(${(props) => `${props.bgUrl}`});
   height: 180px;
   background-size: cover;
-  border-radius: 4px;
+  border-radius: 8px;
   background-position: center center;
   transition: opacity 0.1s linear;
 `;
@@ -46,10 +47,23 @@ const Year = styled.span`
   color: rgba(255, 255, 255, 0.5);
 `;
 
-const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
+const Poster = ({
+  id,
+  imageUrl,
+  title,
+  rating,
+  year,
+  isMovie = false,
+  onClickPoster,
+}) => (
   <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
     <Container>
-      <ImageContainer>
+      <ImageContainer
+        onClick={(e) => {
+          e.preventDefault();
+          onClickPoster(id);
+        }}
+      >
         <Image
           bgUrl={imageUrl || require("../assets/noPosterSmall.png")}
         ></Image>
@@ -69,10 +83,10 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
 );
 
 Poster.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   imageUrl: PropTypes.string,
   title: PropTypes.string.isRequired,
-  rating: PropTypes.number,
+  rating: PropTypes.string,
   year: PropTypes.string,
   isMovie: PropTypes.bool,
 };

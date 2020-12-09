@@ -9,9 +9,27 @@ import Poster from "../../components/Poster";
 
 const Container = styled.div`
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  
+  flex-wrap: wrap;
+  height: 70vh;
+  width: 100%;
+
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.4);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+  }
 `;
 
-const HomePresenter = ({ nowPlaying, error, loading }) => {
+const MovieList = ({ nowPlaying, error, loading, onClickItem }) => {
   return (
     <>
       <Helmet>
@@ -22,7 +40,7 @@ const HomePresenter = ({ nowPlaying, error, loading }) => {
       ) : (
         <Container>
           {nowPlaying && nowPlaying.length > 0 && (
-            <Section title="현재 상영작">
+            <Section title="현재상영작: 보고싶은 영화를 클릭하세요">
               {nowPlaying.map((movie) => (
                 <Poster
                   key={movie._id}
@@ -30,6 +48,7 @@ const HomePresenter = ({ nowPlaying, error, loading }) => {
                   title={movie.title}
                   imageUrl={movie.poster}
                   rating={movie.star}
+                  onClickPoster={onClickItem}
                 />
               ))}
             </Section>
@@ -40,5 +59,4 @@ const HomePresenter = ({ nowPlaying, error, loading }) => {
     </>
   );
 };
-
-export default HomePresenter;
+export default MovieList;

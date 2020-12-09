@@ -1,10 +1,11 @@
 import React from "react";
 import { moviesApi } from "../../api";
-import MovieListPresenter from "./MovieListPresenter";
+
+import UpcomingMovieList from "./UpcomingMovieList";
 
 export default class extends React.Component {
   state = {
-    nowPlaying: null,
+    comingsoon: null,
     error: null,
     loading: true,
   };
@@ -16,11 +17,12 @@ export default class extends React.Component {
   async componentDidMount() {
     try {
       const {
-        data: { result: nowPlaying },
-      } = await moviesApi.nowPlaying();
-      console.log(nowPlaying);
-      this.setState({ nowPlaying });
+        data: { result: comingsoon },
+      } = await moviesApi.comingsoon_list();
+      
+      this.setState({ comingsoon });
     } catch (error) {
+      console.log(error);
       this.setState({
         error: "영화 정보를 찾을 수 없습니다.",
       });
@@ -32,11 +34,12 @@ export default class extends React.Component {
   }
 
   render() {
-    const { nowPlaying, error, loading } = this.state;
+    console.log(this.state)
+    const { comingsoon, error, loading } = this.state;
 
     return (
-      <MovieListPresenter
-        nowPlaying={nowPlaying}
+      <UpcomingMovieList
+        comingsoon={comingsoon}
         error={error}
         loading={loading}
       />
