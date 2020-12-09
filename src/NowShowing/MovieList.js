@@ -2,29 +2,29 @@ import React from "react";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 
-import Section from "../../components/Section";
-import Loader from "../../components/Loader";
-import Message from "../../components/Message";
-import Poster from "../../components/Poster";
+import Section from "../components/Section";
+import Loader from "../components/Loader";
+import Message from "../components/Message";
+import Poster from "../components/Poster";
 
 const Container = styled.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
-  
   flex-wrap: wrap;
   height: 70vh;
   width: 100%;
+  
 
   overflow: scroll;
   &::-webkit-scrollbar {
     width: 8px;
     height: 8px;
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.4);
+    background: #96ABB5;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #353F42;
     border-radius: 6px;
   }
 `;
@@ -33,7 +33,7 @@ const MovieList = ({ nowPlaying, error, loading, onClickItem }) => {
   return (
     <>
       <Helmet>
-        <title>MovieList | 비트미니프로젝트2</title>
+        <title>BIT_Miniproject2</title>
       </Helmet>
       {loading ? (
         <Loader />

@@ -1,5 +1,5 @@
 import React from "react";
-import { moviesApi } from "../../api";
+import { moviesApi } from "../api";
 import styled from "styled-components";
 
 import MovieList from "./MovieList";

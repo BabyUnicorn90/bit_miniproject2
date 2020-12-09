@@ -42,17 +42,11 @@ const Title = styled.span`
   margin-bottom: 3px;
 `;
 
-const Year = styled.span`
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.5);
-`;
-
 const Poster = ({
   id,
   imageUrl,
   title,
   rating,
-  year,
   isMovie = false,
   onClickPoster,
 }) => (
@@ -77,7 +71,6 @@ const Poster = ({
       <Title>
         {title.length > 15 ? `${title.substring(0, 15)}...` : title}
       </Title>
-      <Year>{year}</Year>
     </Container>
   </Link>
 );

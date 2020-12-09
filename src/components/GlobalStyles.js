@@ -8,14 +8,15 @@ const globalStyles = createGlobalStyle`
         color:inherit;
     }
     *{
+        @import url('../assets');
         box-sizing:border-box;
+        font-family: HOONDDUKBOKKI.TTF !important;
     }
     body{
-        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size:12px;
-        background-color:rgba(20,20,20,1);
-        color:white;
-        padding: 70px;
+        
+        font-size:12rem;
+        background-color:#232E22;
+        padding: 80px;
     }
 `;
 

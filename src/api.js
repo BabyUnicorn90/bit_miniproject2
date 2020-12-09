@@ -5,20 +5,5 @@ const api = axios.create({
 });
 
 export const moviesApi = {
-    nowshowing_list: () => api.get("nowshowing/list"),
-    register: () => api.get("movie/register/<oid>"),
-    comingsoon_list: () => api.get("comingsoon/list"),
-    // movieDetail: (id) =>
-    //   api.get(`movie/${id}`, {
-    //     params: {
-    //       append_to_response: "videos",
-    //     },
-    //   }),
-    // search: (term) =>
-    //   api.get("search/movie", {
-    //     params: {
-    //       query: encodeURIComponent(term),
-    //     },
-    //   }),
-  };
-  
+  nowshowing_list: () => api.get("nowshowing/list"),
+};

@@ -8,10 +8,10 @@ const Header = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 80px;
   padding: 10px 10px;
-  background-color: rgba(20, 20, 20, 0.8);
-  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
+  background-color:#232E22;
+  box-shadow: 0px 1px 2px 3px #E2C458;
   z-index: 10;
   display: flex;
   flex-direction: column;
