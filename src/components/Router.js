@@ -10,6 +10,7 @@ export default () => (
     <>
       <Header />
         <Switch>
+          <Route path="/" exact component={Nowshowing} />
           <Route path="/movie" exact component={Nowshowing} />
         </Switch>
     </>

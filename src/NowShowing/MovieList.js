@@ -12,11 +12,18 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 70vh;
   width: 100%;
-  
+  height: 100%;
 
-  overflow: scroll;
+  overflow-y: scroll;
+
+  .poster-title {
+    color: #FFF;
+  }
+  .section-title {
+    color: #FFF;
+  }
+
   &::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -38,9 +45,9 @@ const MovieList = ({ nowPlaying, error, loading, onClickItem }) => {
       {loading ? (
         <Loader />
       ) : (
-        <Container>
+        <Container className="MovieListContainer">
           {nowPlaying && nowPlaying.length > 0 && (
-            <Section title="현재상영작: 보고싶은 영화를 클릭하세요">
+            <Section className="Section" title="현재상영작: 보고싶은 영화를 클릭하세요">
               {nowPlaying.map((movie) => (
                 <Poster
                   key={movie._id}

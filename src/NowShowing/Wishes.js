@@ -13,12 +13,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  overflow: scroll;
+  overflow-y: scroll;
   height: 30vh;
   width: 100%;
-  text-color: #232E22;
-
-  overflow: scroll;
+  color: #232E22;
   &::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -41,7 +39,7 @@ const Wishes = ({ user_favorite, error, loading, wishData, onClickItem }) => {
       {loading ? (
         <Loader />
       ) : (
-        <Container className="container">
+        <Container className="WishesContainer">
           <Section title="나의 찜">
             {wishData.map((movie) => (
               <Poster

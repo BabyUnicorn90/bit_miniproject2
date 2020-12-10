@@ -10,13 +10,14 @@ const globalStyles = createGlobalStyle`
     *{
         @import url('../assets');
         box-sizing:border-box;
-        font-family: HOONDDUKBOKKI.TTF !important;
     }
     body{
-        
         font-size:12rem;
         background-color:#232E22;
-        padding: 80px;
+        ${'' /* padding: 80px; */}
+    }
+    html, body, #root {
+        height: 100%;
     }
 `;
 

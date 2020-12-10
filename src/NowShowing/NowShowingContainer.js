@@ -9,6 +9,8 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  height: 100%;
 `;
 
 export default class extends React.Component {
@@ -69,7 +71,7 @@ export default class extends React.Component {
 
     return (
       <>
-        <Wrapper>
+        <Wrapper className="NowShowingContainerWrapper">
           <MovieList
             nowPlaying={nowPlaying}
             error={error}

@@ -68,7 +68,7 @@ const Poster = ({
           {rating} / 10
         </Rating>
       </ImageContainer>
-      <Title>
+      <Title className="poster-title">
         {title.length > 15 ? `${title.substring(0, 15)}...` : title}
       </Title>
     </Container>

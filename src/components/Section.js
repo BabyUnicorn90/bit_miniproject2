@@ -8,6 +8,11 @@ const Container = styled.div`
   }
   display: flex;
   flex-direction: column;
+  height: 100%;
+
+  &.SectionConatiner {
+    margin-top: 80px;
+  }
 `;
 
 const Title = styled.span`
@@ -23,8 +28,8 @@ const Grid = styled.div`
 `;
 
 const Section = ({ title, children }) => (
-  <Container>
-    <Title>{title}</Title>
+  <Container className="section-container">
+    <Title className="section-title">{title}</Title>
     <Grid>{children}</Grid>
   </Container>
 );
