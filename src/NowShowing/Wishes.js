@@ -17,6 +17,7 @@ const Container = styled.div`
   height: 30vh;
   width: 100%;
   color: #232E22;
+
   &::-webkit-scrollbar {
     width: 8px;
     height: 8px;
