@@ -8,7 +8,7 @@ import Message from "../components/Message";
 import Poster from "../components/Poster";
 
 const Container = styled.div`
-  padding: 20px;
+  padding: 15px;
   background-color: #E2C458;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ const Container = styled.div`
   }
 `;
 
-const Wishes = ({ user_favorite, error, loading, wishData, onClickItem }) => {
+const Wishes = ({error, loading, wishData, onClickItem }) => {
   console.log({ wishData });
   return (
     <>
@@ -40,7 +40,7 @@ const Wishes = ({ user_favorite, error, loading, wishData, onClickItem }) => {
         <Loader />
       ) : (
         <Container className="WishesContainer">
-          <Section title="나의 찜">
+          <Section title="나의 찜: 클릭하면 나의 찜에서 제거됩니다.">
             {wishData.map((movie) => (
               <Poster
                 key={movie._id}
@@ -48,8 +48,6 @@ const Wishes = ({ user_favorite, error, loading, wishData, onClickItem }) => {
                 title={movie.title}
                 imageUrl={movie.poster}
                 rating={movie.vote_average}
-                isMovie={true}
-                year={movie.release_date && movie.release_date.substring(0, 4)}
                 onClickPoster={onClickItem}
               />
             ))}

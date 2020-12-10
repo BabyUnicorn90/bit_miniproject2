@@ -8,7 +8,8 @@ import Message from "../components/Message";
 import Poster from "../components/Poster";
 
 const Container = styled.div`
-  padding: 20px;
+  padding: 15px;
+  margin-top: 85px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

@@ -33,6 +33,7 @@ const ImageContainer = styled.div`
     }
     ${Rating} {
       opacity: 1;
+      color: white;
     }
   }
 `;
